@@ -1,0 +1,8 @@
+= @app['name']
+ul
+  - @vars.each do |key, val|
+    li = "#{key} - #{val}"
+= form_tag app_config_vars_path(@app['id'])
+  = text_field_tag 'config_var[name]'
+  = text_field_tag 'config_var[value]'
+  = submit_tag
